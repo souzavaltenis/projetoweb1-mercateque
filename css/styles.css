@@ -1,0 +1,592 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body{ height:100vh; margin:0; }
+
+#header{ min-height: 8vh; }
+#footer{ min-height:4vh; }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+
+#header {
+    background: yellow;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0.2);
+}
+
+#logo {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem;
+}
+
+#logo a {
+    font-family: 'Roboto';
+    font-size: 2.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#logo img {
+    width: 6vh;
+}
+
+#categorias {
+    align-self: center;
+    flex-grow: 1.5;
+}
+
+#categorias a {
+    margin-left: -0.2vw;
+    padding: 3vh;
+    font-family: 'Roboto';
+    text-decoration: none;
+    color: black;
+    background-color: yellow;
+    transition: background-color 0.2s;
+}
+
+#categorias a:hover {
+    color: yellow;
+    background-color: black;
+}
+
+#carrinho {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
+
+#carrinho a {
+    margin-left: 0.5rem;
+    font-family: 'Roboto';
+    text-decoration: none;
+    color: black;
+}
+
+
+#carrinho h1 {
+    font-size: 1rem;
+    background-color: black;
+    color: yellow;
+    margin-right: 0.2rem;
+    padding: 0.3rem;
+    border-radius: 2rem;
+}
+
+/****************slider********/
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  width: calc(1vh + 0.5vw);
+  height: calc(1vh + 0.5vw);
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+#bolinhas {
+    margin-top: -2vw;
+    position: absolute;
+    align-self: center;
+    width: 100%;
+}
+
+.active, .dot:hover {
+  background-color: yellow;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/**********fim-slider(
+/*main*/
+
+#main {
+    flex-grow: 1;
+}
+
+#msg-initial {
+    font-family: 'Kumbh Sans';
+    margin: 1em 1em 0.5em 0.5em;
+    color: #666666;
+}
+
+#main #container-products {
+    min-width: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#main #container-products .item {
+    margin: 1rem;
+    background: #FEFEFE;
+    box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0.1);
+    border-radius: 9.98123px;
+    width: 14.5rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#main #container-products .item img {
+    margin-top: 1.5vh;
+    align-self: center;
+    width: 6rem;
+}
+
+#main #container-products .item p {
+    margin-top: 2vh;
+    align-self: center;
+    font-family: 'Poppins';
+}
+
+
+#main #container-products .item #bottom-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+#main #container-products .item #bottom-details img{
+    width: 1.5rem;
+    margin: 1rem 1rem 0 auto;
+    cursor: pointer;
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    transition: border-radius 0.2s;
+}
+
+#main #container-products .item #bottom-details img:hover {
+    border-radius: 0.5rem;
+    transform: translateY(-5px);
+}
+
+#main #container-products .item #bottom-details img:active {
+    background-color: blue;
+}
+
+#main #container-products .item #bottom-details p {
+    font-size: large;
+    font-family: 'Roboto';
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 4vh; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: yellow; /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 1rem; /* Increase font size */
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+  
+#myBtn:hover {
+    color: yellow;
+    background-color: #000; /* Add a dark-grey background on hover */
+}
+
+/*footer*/
+
+#footer {
+    margin-top: auto;
+    position: relative;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+#footer p, a {
+    align-self: center;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+
+#footer a{
+    margin-left: 1rem;
+    color: blue;
+}
+
+@media (max-height: 900px){
+    #categorias a {
+        padding: 2.5vh;
+    }
+}
+
+@media (max-height: 770px){
+    #categorias a {
+        padding: 2vh;
+    }
+}
+
+
+/**/
+
+#slider img {
+    width: 100%;
+}
+
+/*CARRINHO*/
+#container-carrinho  {
+    display: flex;
+    flex-direction: column;
+}
+
+#container-carrinho .item-carrinho {
+    margin: 1rem;
+    background: #FEFEFE;
+    box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0.1);
+    border-radius: 9.98123px;
+    display: flex;
+    align-items: center;
+}
+
+#container-carrinho .item-carrinho img{
+    width: 15vh;
+    height: 10vh;
+}
+
+#container-carrinho .item-carrinho p {
+    font-family: 'Poppins';
+    font-size: 2vw;
+    margin-left: 2vw;
+}
+
+#container-carrinho .item-carrinho #preco-item {
+    margin-left: auto;
+    margin-right: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container-carrinho .item-carrinho .trash {
+    width: 2vw;
+    height: 3.6vh;
+    cursor: pointer;
+    margin-right: 2vw;
+}
+
+#init-carrinho-msg {
+    font-size: 6vh;
+}
+
+
+#msg-initial {
+    color: #999;
+    font-family: sans-serif;
+    font-size: 5vh;
+}
+
+#header img {
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+}
+
+#price-carrinho-msg  {
+    font-family: 'Kumbh Sans';
+    font-size: 1vw;
+    margin: 2vh 0vw 2vh 26vw;
+    padding: 2vh;
+}
+/**********************************************************************/
+
+@media (max-width: 1030px){
+
+    #categorias {
+        display: none;
+
+    }
+
+    /* Dropdown Button */
+    .dropbtn {
+        background-color: black;
+        color: yellow;
+        padding: 2.3vw 5vw;
+        margin-right: 6vw;
+        font-size: 16px;
+        width: 40vw;
+        align-self: center;
+        border: none;
+        font-family: 'Roboto';
+    }
+  
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        align-self: center;
+    }
+  
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: yellow;
+        width: 40vw;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        font-family: 'Poppins';
+        color: black;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+    }
+  
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+  
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    
+    #container-carrinho .item-carrinho .trash {
+        width: 3vw;
+        height: 2.6vh;
+    }
+
+    #bolinhas {
+        margin-top: -2.4vw;
+    }
+}
+
+@media (max-width: 880px){
+    #bolinhas {
+        margin-top: -2.6vw;
+    }
+}
+
+@media (max-width: 780px){
+    #bolinhas {
+        margin-top: -3vw;
+    }
+}
+
+/******************************************************************************************/
+
+@media (max-width: 670px){
+
+    #logo a {
+        font-size: 2rem;
+    }
+
+    
+    #logo img {
+        width: 5vh;
+    }
+
+    #categorias {
+        display: none;
+    }
+
+    /* Dropdown Button */
+    .dropbtn {
+        background-color: black;
+        color: yellow;
+        padding: 3vw 5vw;
+        margin-right: 6vw;
+        font-size: 16px;
+        border-radius: 4%;
+        border: none;
+        font-family: 'Roboto';
+    }
+  
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        align-self: center;
+    }
+  
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: yellow;
+        min-width: 4vw;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        font-family: 'Poppins';
+        color: black;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+    }
+  
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+  
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+
+    /**/
+    
+    #carrinho a{
+        display: none;
+    }
+
+    #carrinho h1 {
+        margin-left: -2vw;
+        font-size: 0.7rem;
+    }
+
+    #price-carrinho-msg {
+        color: red;
+    }
+
+    #slider img {
+        height: 16vh;
+    }
+
+    #msg-initial {
+        margin-left: 4vw;
+        color: #999;
+        font-family: sans-serif;
+        font-size: 2.8vh;
+    }
+
+    #main #container-products {
+        margin-left: 16vw;
+        min-width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*carrinho*/
+
+    #container-carrinho .item-carrinho {
+        margin: .5rem;
+        border-radius: 5px;
+        box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    #container-carrinho .item-carrinho p {
+        font-size: 4.5vw;
+    }
+    
+    #container-carrinho .item-carrinho .trash {
+        width: 5vw;
+        height: 3vh;
+    }
+
+    #price-carrinho-msg  {
+        color: #999;
+        font-family: 'Roboto';
+        font-size: 2vw;
+        display: flex;
+        margin-left: 2.5rem;
+        padding: 2vh;
+
+    }
+
+    #bolinhas {
+        margin-top: -4.3vw;
+    }
+}
+
+
+@media (max-width: 450px){
+    #logo a {
+        font-size: 1.3rem;
+    }
+
+    #bolinhas {
+        margin-top: -5.4vw;
+    }
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Os melhores produtos tecnologicos por um preço justo.">
+        <meta name="keywords" content="Celulares, Notebooks, Televisores, Teclados, Mouses">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="assets/img/icon.png" type="image/png">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&family=Poppins:wght@200&family=Roboto:wght@900&display=swap" rel="stylesheet">
+        <title>Mercatec</title>
+    </head>
+
+    <body>
+
+        <div id="header">
+
+            <div id="logo">
+                <img onclick="window.location.href='index.html'" src="assets/img/icon.png" alt="logo">
+                <a href="index.html">Mercatec</a>
+            </div>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Categorias</button>
+                <div class="dropdown-content">
+                <a class="link" href="notebooks.html">Notebooks</a>
+                <a class="link" href="celulares.html">Celulares</a>
+                <a class="link" href="teclados.html">Teclados</a>
+                <a class="link" href="mouses.html">Mouses</a>
+                <a class="link" href="televisores.html">Televisores</a>
+                </div>
+              </div>
+
+            <div id="categorias">
+                <a class="link" href="notebooks.html">Notebooks</a>
+                <a class="link" href="celulares.html">Celulares</a>
+                <a class="link" href="teclados.html">Teclados</a>
+                <a class="link" href="mouses.html">Mouses</a>
+                <a class="link" href="televisores.html">Televisores</a>
+            </div>
+
+            <div id="carrinho">
+                <h1 id="qtdItens"></h1>
+                <img onclick="window.location.href='carrinho.html'" src="assets/img/shopping-cart-b.png" alt="carrinho">
+                <a href="carrinho.html">Carrinho</a>
+            </div>
+
+        </div>
+        
+        <div id="main">
+
+            <h1 id="msg-initial">Melhores Ofertas de Notebooks</h1>
+            <div name="container_products" id="container-products">
+            </div>
+
+            <button onclick="topFunction()" class="fade" id="myBtn" title="Go to top">Topo</button>
+            
+        </div>
+
+        <div id="footer">
+            <p>MercaTec © 2020</p>
+            <a href="https://github.com/souzavaltenis/projetoweb1-mercatec">GitHub &#128153;</a>
+        </div>
+
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
