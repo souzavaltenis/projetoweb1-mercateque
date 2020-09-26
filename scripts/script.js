@@ -164,7 +164,7 @@ Lógica para add item no carrinho
 ==========================================================
 */
 
-data_to_save = 'data_carrinho_mercatec'; //chave para recuperar e salvar dados
+data_to_save = 'data_carrinho_mercatech'; //chave para recuperar e salvar dados
 
 carrinho = []; //local onde será guardado os produtos do carrinho
 
