@@ -13,36 +13,46 @@ Dados dos produtos
 ==========================================================
 */
 
-    ftCarrinho = "assets/img/shopping-cart-y.png";
+    ftCarrinho = "../assets/img/shopping-cart-y.png";
 
     notebook = {
         title: 'Notebook Samsung X40',
-        img: 'assets/img/notebooks/1.png',
+        img: '../assets/img/notebooks/1.png',
         price: 4499.99
     }
 
     smartphone = {
         title: 'Xiaomi Redmi Note 8',
-        img: 'assets/img/celulares/1.png',
+        img: '../assets/img/celulares/1.png',
         price: 3204.91
     }
 
     teclado = {
         title: 'Teclado Gamer Razer Mini',
-        img: 'assets/img/teclados/1.png',
+        img: '../assets/img/teclados/1.png',
         price: 1112.45
     }
 
     mouse = {
         title: 'Mouse Razer DeathAdder',
-        img: 'assets/img/mouses/1.png',
+        img: '../assets/img/mouses/1.png',
         price: 7325.64
     }
 
     televisor = {
         title: 'Smart Tv Samsung 55',
-        img: 'assets/img/televisores/1.png',
+        img: '../assets/img/televisores/1.png',
         price: 1274.79
+    }
+
+    //Retira o ../ dos paths caso esteja no index
+    if(getPage() == '' || getPage() == 'index.html'){
+        ftCarrinho = ftCarrinho.substring(3);
+        notebook.img = notebook.img.substring(3);
+        smartphone.img = smartphone.img.substring(3);
+        teclado.img = teclado.img.substring(3);
+        mouse.img = mouse.img.substring(3);
+        televisor.img = televisor.img.substring(3);
     }
 
 /*
@@ -154,7 +164,7 @@ Lógica para add item no carrinho
 ==========================================================
 */
 
-data_to_save = '_carrinho_'; //chave para recuperar e salvar dados
+data_to_save = 'data_carrinho_mercatec'; //chave para recuperar e salvar dados
 
 carrinho = []; //local onde será guardado os produtos do carrinho
 
@@ -172,12 +182,33 @@ function comprar(item) {
 }
 
 function setQtdCarrinho() {
+
+    qtdProdutosCarrinho = getNonNulls().length;
+
     h1Qtd = document.getElementById('qtdItens');
-    h1Qtd.innerHTML = getNonNulls().length;
+
+    if(qtdProdutosCarrinho != 0){
+        h1Qtd.style.display = "block"
+        h1Qtd.innerHTML = qtdProdutosCarrinho;
+    }else{
+        h1Qtd.style.display = "none"
+    }
+
 }
+
 
 function initData() {
     preencherProdutos();
+}
+
+/*
+==========================================================
+Retorna o arquivo html atual
+==========================================================
+*/
+
+function getPage(){
+    return window.location.pathname.split("/").pop();
 }
 
 /*
@@ -188,7 +219,7 @@ Inicia os dados de acordo com cada página
 
 function preencherProdutos() {
 
-    page = window.location.pathname.split("/").pop();
+    page = getPage();
 
     if (localStorage.hasOwnProperty(data_to_save)) {
         JSON.parse(localStorage.getItem(data_to_save)).forEach(item => {
@@ -231,7 +262,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
 
-    pageAtual = window.location.pathname.split("/").pop();
+    pageAtual = getPage();
 
     if (pageAtual == 'index.html' || pageAtual == '') {
         var i;
@@ -341,10 +372,10 @@ function addItensCarrinho() {
             layout.appendChild(item);
             item.innerHTML =
                 `<div id=${i} class="item-carrinho fade">\n` +
-                `<img src=${produto.img} alt="celular">\n` +
+                `<img src=${produto.img} alt="produto">\n` +
                 `<p>${produto.title}</p>\n` +
                 `<p id="preco-item">R$ ${produto.price}</p>\n` +
-                `<img id=${i} class="trash" src="assets/img/trash.png" onclick="apagarProduto(this)"; alt="excluir item">\n` +
+                `<img id=${i} class="trash" src="../assets/img/trash.png" onclick="apagarProduto(this)"; alt="excluir item">\n` +
                 '</div>';
         }
 
@@ -386,13 +417,19 @@ Botão Scroll to Top
 ==========================================================
 */
 
-//Get the button:
-mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
+
+    page = getPage();
+
+    if(page == '' || page == 'index.html' || page == 'contato.html'){
+        return;
+    }
+
+    mybutton = document.getElementById("myBtn");
+
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         mybutton.style.display = "block";
     } else {
@@ -404,6 +441,36 @@ function scrollFunction() {
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+/*
+==========================================================
+Retira o formulario e mostra uma msg, após 3s vai no index
+==========================================================
+*/
+
+function handleForm(event, form) {
+    event.preventDefault();
+
+    contadorToHome = 0
+
+    form.style.display = 'none';
+    h2msg = document.getElementById("msg-contato");
+    h2msg.style.marginTop = '30vh';
+
+    nome = document.getElementById("inome").value;
+    sobrenome = document.getElementById("isobrenome").value;
+
+    h2msg.innerHTML = `${nome} ${sobrenome}, sua mensagem foi enviada com sucesso &#9745;&#65039;`;
+
+    setInterval(()=> {
+        contadorToHome++
+        if(contadorToHome == 3){
+            window.location.href='../index.html';
+            return;
+        }
+    }, 1000);
+
 }
 
 /*

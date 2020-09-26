@@ -290,6 +290,10 @@ body {
     color: blue;
 }
 
+#footer #contact {
+    color: red;
+}
+
 @media (max-height: 900px){
     #categorias a {
         padding: 2.5vh;
@@ -356,7 +360,7 @@ body {
 #msg-initial {
     color: #999;
     font-family: sans-serif;
-    font-size: 5vh;
+    font-size: calc(2vw + 2vh);
 }
 
 #header img {
@@ -368,19 +372,146 @@ body {
 }
 
 #price-carrinho-msg  {
-    font-family: 'Kumbh Sans';
-    font-size: 1vw;
-    margin: 2vh 0vw 2vh 26vw;
+    color: #999;
+    font-family: 'Roboto';
+    display: flex;
+    font-size: 2vw;
+    margin-left: 2.5rem;
     padding: 2vh;
 }
+/*FORMULARIO ENTRE EM CONTATO *************************************************************************/
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form {
+    width: 100%;
+    max-width: 550px;
+
+    display: grid;
+    grid-gap: 1vh;
+    grid-template-columns: 1fr;
+    
+    background: #f9f9f9;
+    
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.separacao {
+    display: flex;
+    flex-direction: row;
+}
+
+.separacao .input1{
+    width: 100%;
+    flex: 1 1;
+    margin: -4px 8px 10px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.separacao input{
+    background: #fff;
+    border: 1px solid #9c9c9c;
+    border-radius: 6px;
+}
+
+.separacao .input2{
+    flex: 1 1;
+    margin: -4px 310px 10px 10px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+form #ititulo { 
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #9c9c9c;
+}
+
+form textarea {
+    background: #fff;
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+}
+
+form button {
+    font-size: 1rem;
+    font-family: 'Roboto';
+    color: black;
+    background-color: #ccc;
+    margin: 0 0 0 0;
+    padding: 12px 30px;
+    text-decoration: none;
+    border: 0;
+    border-radius: 6px;
+    transition: all 150ms linear 0s;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+form .button {
+    margin: 1px 10px 10px;
+}
+
+form button:hover {
+    background: yellow;
+}
+
+input, textarea {
+    font-family: 'Roboto';
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+}
+
+#imensagem {
+    resize: vertical;
+}
+
+form input::placeholder, textarea::placeholder {
+    color: #A0A0B2;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    padding-top: 1rem;
+    font-family: 'Kumbh Sans';
+    font-size: calc(1vw + 2vh);
+    margin: 1em 1em 0.5em 0.5em;
+    color: #666666;
+}
+
+/* @media (max-width: 710px){
+
+    .form {
+        width: 90%;
+        background-color: red;
+    }
+
+    .separacao {
+        
+        width: 100%;
+    }
+} */
+
 /**********************************************************************/
 
-@media (max-width: 1030px){
+@media (max-width: 1050px){
 
     #categorias {
         display: none;
 
     }
+
 
     /* Dropdown Button */
     .dropbtn {
@@ -525,19 +656,8 @@ body {
         font-size: 0.7rem;
     }
 
-    #price-carrinho-msg {
-        color: red;
-    }
-
     #slider img {
         height: 16vh;
-    }
-
-    #msg-initial {
-        margin-left: 4vw;
-        color: #999;
-        font-family: sans-serif;
-        font-size: 2.8vh;
     }
 
     #main #container-products {
@@ -556,7 +676,7 @@ body {
     }
     
     #container-carrinho .item-carrinho p {
-        font-size: 4.5vw;
+        font-size: 2.5vw;
     }
     
     #container-carrinho .item-carrinho .trash {
@@ -564,23 +684,48 @@ body {
         height: 3vh;
     }
 
-    #price-carrinho-msg  {
-        color: #999;
-        font-family: 'Roboto';
-        font-size: 2vw;
-        display: flex;
-        margin-left: 2.5rem;
-        padding: 2vh;
-
-    }
-
     #bolinhas {
         margin-top: -4.3vw;
+    }
+
+    #footer {
+        font-size: 1.8vh;
+    }
+
+    .separacao {
+        width: 61%;
+        margin-left: 9vw;
+    }
+
+}
+
+@media (max-width: 710px){
+    .form form {
+        width: 90%;
+    }
+    .separacao {
+        width: 61%;
+        margin-left: 12vw;
+    }
+
+}
+
+@media (max-width: 500px){
+    
+    .separacao {
+        margin-left: 12vw;
     }
 }
 
 
 @media (max-width: 450px){
+    .form form {
+        background-color: transparent;
+    }
+    .separacao {
+        margin-left: 0;
+    }
+
     #logo a {
         font-size: 1.3rem;
     }
@@ -589,4 +734,11 @@ body {
         margin-top: -5.4vw;
     }
 
+}
+
+@media (max-width: 320px){
+
+    .separacao {
+        width: 55%;
+    }
 }
