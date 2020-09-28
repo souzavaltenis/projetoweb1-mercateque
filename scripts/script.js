@@ -463,9 +463,14 @@ function handleForm(event, form) {
 
     h2msg.innerHTML = `${nome} ${sobrenome}, sua mensagem foi enviada com sucesso &#9745;&#65039;`;
 
+    loading = document.getElementById('loadanimado');
+    loading.style.display = "flex";
+
+    secondsToWait = 5
+
     setInterval(()=> {
         contadorToHome++
-        if(contadorToHome == 3){
+        if(contadorToHome == secondsToWait){
             window.location.href='../index.html';
             return;
         }

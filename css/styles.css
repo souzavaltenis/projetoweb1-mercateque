@@ -478,7 +478,7 @@ form input::placeholder, textarea::placeholder {
     color: #A0A0B2;
 }
 
-h2 {
+#msg-contato {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -567,6 +567,10 @@ h2 {
 
     #bolinhas {
         margin-top: -2.4vw;
+    }
+    
+    #msg-contato {
+        padding-left: 10vw;
     }
 }
 
