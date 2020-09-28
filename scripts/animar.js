@@ -12,3 +12,9 @@ anime({
   delay: anime.stagger(200, {grid: [16,10], from: 7}),
   loop: true
 })
+
+//LOADING PAGE
+
+$(window).on("load",function(){
+  $(".overlay").delay(1000).fadeOut("slow");
+});
