@@ -285,13 +285,34 @@ body {
     text-decoration: none;
 }
 
-#footer a{
-    margin-left: 1rem;
+#footer p {
+    margin-right: 0.4rem;
+}
+
+#footer a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0vw 1vw;
+}
+
+#footer #github {
     color: blue;
+}
+
+#footer #github:hover {
+    background-color: #454545;
+    color: white;
 }
 
 #footer #contact {
     color: red;
+}
+
+#footer #contact:hover {
+    background-color: #454545;
+    color: white;
 }
 
 @media (max-height: 900px){
@@ -505,20 +526,23 @@ form input::placeholder, textarea::placeholder {
 
 /**********************************************************************/
 
+
 @media (max-width: 1050px){
+
+    #logo {
+        flex-grow: 0.5;
+    }
 
     #categorias {
         display: none;
 
     }
 
-
     /* Dropdown Button */
     .dropbtn {
         background-color: black;
         color: yellow;
         padding: 2.3vw 5vw;
-        margin-right: 6vw;
         font-size: 16px;
         width: 40vw;
         align-self: center;
@@ -580,21 +604,41 @@ form input::placeholder, textarea::placeholder {
     }
 }
 
+@media (max-width: 820px){
+    #container-products{
+        padding-left: 14vw;
+    }
+}
+
 @media (max-width: 780px){
     #bolinhas {
         margin-top: -3vw;
     }
-}
-
-/******************************************************************************************/
-
-@media (max-width: 670px){
 
     #logo a {
         font-size: 2rem;
     }
 
-    
+    #carrinho img {
+        margin-left: -2.5vw;
+    }
+}
+
+/******************************************************************************************/
+
+@media (max-width: 710px){
+    .form form {
+        width: 90%;
+    }
+    .separacao {
+        width: 61%;
+        margin-left: 12vw;
+    }
+
+}
+
+@media (max-width: 670px){
+
     #logo img {
         width: 5vh;
     }
@@ -671,6 +715,10 @@ form input::placeholder, textarea::placeholder {
         flex-direction: column;
     }
 
+    #container-products{
+        padding-left: 6vw;
+    }
+
     /*carrinho*/
 
     #container-carrinho .item-carrinho {
@@ -699,17 +747,6 @@ form input::placeholder, textarea::placeholder {
     .separacao {
         width: 61%;
         margin-left: 9vw;
-    }
-
-}
-
-@media (max-width: 710px){
-    .form form {
-        width: 90%;
-    }
-    .separacao {
-        width: 61%;
-        margin-left: 12vw;
     }
 
 }
