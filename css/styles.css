@@ -83,7 +83,7 @@ body {
     font-size: 1rem;
     background-color: black;
     color: yellow;
-    margin-right: 0.2rem;
+    margin-right: 4px;
     padding: 0.3rem;
     border-radius: 2rem;
 }
@@ -269,6 +269,42 @@ body {
     background-color: #000; /* Add a dark-grey background on hover */
 }
 
+#main #cadastro {
+    display: flex;
+    align-items: center;
+    margin-top: 2vW;
+    margin-left: 2vw;
+}
+
+/* #main #cadastro h3 {
+    margin-right: 20px;
+    font-family: 'Roboto';
+    color: #777;
+    font-size: 1vw;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@1000&display=swap');
+
+#main #cadastro a {
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: yellow; /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem; /* Increase font size */
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+#main #cadastro a:hover {
+    color: yellow;
+    background-color: #000; 
+}
+
+
 /*footer*/
 
 #footer {
@@ -306,14 +342,6 @@ body {
     color: white;
 }
 
-#footer #contact {
-    color: red;
-}
-
-#footer #contact:hover {
-    background-color: #454545;
-    color: white;
-}
 
 @media (max-height: 900px){
     #categorias a {
@@ -381,7 +409,7 @@ body {
 #msg-initial {
     color: #999;
     font-family: sans-serif;
-    font-size: calc(2vw + 2vh);
+    font-size: calc(2vw + 1vh);
 }
 
 #header img {
@@ -429,7 +457,7 @@ body {
     flex-direction: row;
 }
 
-.separacao .input1{
+.separacao .input1 {
     width: 100%;
     flex: 1 1;
     margin: -4px 8px 10px;
@@ -437,30 +465,39 @@ body {
     font-size: 1rem;
 }
 
-.separacao input{
+.separacao input, fieldset{
     background: #fff;
     border: 1px solid #9c9c9c;
     border-radius: 6px;
 }
 
-.separacao .input2{
+.separacao .input2 {
     flex: 1 1;
-    margin: -4px 310px 10px 10px;
+    margin: -4px 8px 10px 8px;
     font-weight: 500;
     font-size: 1rem;
 }
 
-
-form #ititulo { 
-    border-radius: 6px;
-    background: #fff;
-    border: 1px solid #9c9c9c;
-}
-
-form textarea {
+form textarea, select {
     background: #fff;
     border: 1px solid #9c9c9c;
     border-radius: 10px;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+#sexo, #faixaidade, #categoriapreferida, fieldset {
+    color: #9c9c9c;
 }
 
 form button {
@@ -485,7 +522,7 @@ form button:hover {
     background: yellow;
 }
 
-input, textarea {
+input, textarea, .input2 {
     font-family: 'Roboto';
     padding: 0.7em;
     margin-bottom: 0.5rem;
@@ -510,19 +547,6 @@ form input::placeholder, textarea::placeholder {
     margin: 1em 1em 0.5em 0.5em;
     color: #666666;
 }
-
-/* @media (max-width: 710px){
-
-    .form {
-        width: 90%;
-        background-color: red;
-    }
-
-    .separacao {
-        
-        width: 100%;
-    }
-} */
 
 /**********************************************************************/
 
@@ -608,6 +632,10 @@ form input::placeholder, textarea::placeholder {
     #container-products{
         padding-left: 14vw;
     }
+
+    #carrinho a{
+        display: none;
+    }
 }
 
 @media (max-width: 780px){
@@ -619,9 +647,6 @@ form input::placeholder, textarea::placeholder {
         font-size: 2rem;
     }
 
-    #carrinho img {
-        margin-left: -2.5vw;
-    }
 }
 
 /******************************************************************************************/
@@ -640,7 +665,7 @@ form input::placeholder, textarea::placeholder {
 @media (max-width: 670px){
 
     #logo img {
-        width: 5vh;
+        width: 4.4vh;
     }
 
     #categorias {
@@ -652,8 +677,8 @@ form input::placeholder, textarea::placeholder {
         background-color: black;
         color: yellow;
         padding: 3vw 5vw;
-        margin-right: 6vw;
         font-size: 16px;
+        margin-right: 10px;
         border-radius: 4%;
         border: none;
         font-family: 'Roboto';
@@ -694,13 +719,12 @@ form input::placeholder, textarea::placeholder {
     /* Change the background color of the dropdown button when the dropdown content is shown */
 
     /**/
-    
-    #carrinho a{
-        display: none;
+
+    #carrinho img {
+        margin-left: -0.1vw;
     }
 
     #carrinho h1 {
-        margin-left: -2vw;
         font-size: 0.7rem;
     }
 

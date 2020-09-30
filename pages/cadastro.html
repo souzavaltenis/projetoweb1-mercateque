@@ -52,7 +52,7 @@
         
         <div id="main">
 
-            <h2 id="msg-contato">Entre em contato com a Mercateque!</h2>
+            <h2 id="msg-contato">Crie uma conta Mercateque!</h2>
             <div class="form">
                 <form id="formulario" onsubmit="handleForm(event, this);">
                     
@@ -67,15 +67,63 @@
                     </div>
 
                     <div class="separacao">
-                        <input class="input2"  id="ititulo" type="text" placeholder="Título da mensagem" style="flex: 6" required>
+                        <input class="input2"  id="ipass" type="password" placeholder="Senha"  required>
                     </div>
                     
                     <div class="separacao">
-                        <textarea class="input1"  id="imensagem" type="text" placeholder="Digite sua mensagem" cols="30" rows="7" required></textarea>
+                        <textarea class="input1"  id="imensagem" type="text" placeholder="Informe sua biografia" cols="30" rows="4" required></textarea>
                     </div>
 
                     <div class="separacao">
-                        <button class="button">Enviar</button>
+                        <select class="input2" required id="sexo">
+                            <option value="" disabled selected>Informe o seu sexo</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
+                    </div>
+                    
+                    <div class="separacao">
+                        <select class="input2" required id="faixaidade">
+                            <option value="" disabled selected>Qual sua faixa de idade</option>
+                            <option value="18-20">15-20</option>
+                            <option value="20-35">20-35</option>
+                            <option value="35-50">35-50</option>
+                            <option value="50-90">50-90</option>
+                        </select>
+                    </div>
+
+                    <div class="separacao">
+                        <select class="input2" required id="categoriapreferida">
+                            <option value="" disabled selected>Qual sua categoria favorita</option>
+                            <option value="notebooks">Notebooks</option>
+                            <option value="celulares">Celulares</option>
+                            <option value="teclados">Teclados</option>
+                            <option value="mouses">Mouses</option>
+                            <option value="televisores">Televisores</option>
+                        </select>
+                    </div>
+
+                    <div class="separacao">
+                        <fieldset required class="input2">
+                            <legend>Você gosta do Mercateque?</legend>
+                            <input type="radio" id="rsim" name="escolha" value="sim" required> Sim &nbsp;
+                            <input type="radio" id="rnao" name="escolha" value="nao" required> Não 
+                        </fieldset>
+                    </div>
+
+                    <div class="separacao">
+                        <fieldset required class="input2">
+                            <legend>Qual sua nota</legend>
+                            <input type="radio" id="r1" name="escolha2" value="1" required> 1 &nbsp;
+                            <input type="radio" id="r2" name="escolha2" value="2" required> 2 &nbsp;
+                            <input type="radio" id="r3" name="escolha2" value="3" required> 3 &nbsp;
+                            <input type="radio" id="r4" name="escolha2" value="4" required> 4 &nbsp;
+                            <input type="radio" id="r5" name="escolha2" value="5" required> 5
+                        </fieldset>
+                    </div>
+                        
+                    <div class="separacao">
+                        <button class="button">Cadastrar</button>
                     </div>
                 </form>
                 <div id="loadanimado">
@@ -88,7 +136,6 @@
         <div id="footer">
             <p>Mercateque © 2020</p>
             <a target="_blank" id="github" href="https://github.com/souzavaltenis/projetoweb1-mercateque">&#128153;GitHub</a>
-            <a id="contact" href="contato.html">&#9742;&#65039; Entrar em Contato</a>
         </div>
 
         <div class="overlay">
