@@ -230,15 +230,25 @@ function teste(qtd, categoria) {
         switch (page) {
             case '':
             case 'index.html': productsTops(); break;
-            case 'notebooks.html': teste(30, 'Notebooks'); break;
-            case 'celulares.html': teste(30, 'Smartphones'); break;
-            case 'teclados.html': teste(30, 'Teclados'); break;
-            case 'mouses.html': teste(30, 'Mouses'); break;
-            case 'televisores.html': teste(30, 'Televisores'); break;
+            case 'notebooks.html': teste(30, 'Notebooks'); changeFooterBackground('ft1.png'); break;
+            case 'celulares.html': teste(30, 'Smartphones'); changeFooterBackground('ft2.png'); break;
+            case 'teclados.html': teste(30, 'Teclados'); changeFooterBackground('ft3.png'); break;
+            case 'mouses.html': teste(30, 'Mouses'); changeFooterBackground('ft4.png'); break;
+            case 'televisores.html': teste(30, 'Televisores'); changeFooterBackground('ft5.png'); break;
             case 'carrinho.html': addItensCarrinho(); break;
         }
     
         setQtdCarrinho();
+    }
+
+    /*
+    ==========================================================
+    Altera a imagem de fundo do footer
+    ==========================================================
+    */
+
+    function changeFooterBackground(img){
+        document.getElementById('footer').style.backgroundImage = `url(../assets/backgrounds/${img})`;
     }
     
     /*
