@@ -794,7 +794,20 @@ form input::placeholder, textarea::placeholder {
 
 @media (max-width: 320px){
 
-    .separacao {
-        width: 55%;
+    #logo a {
+        display: none;
     }
+
+    .separacao {
+        width: 90%;
+    }
+
+    #main #container-products {
+        margin-left: 0vw;
+    }
+
+    #main #cadastro a {
+        padding: 4px;
+    }
+    
 }
