@@ -431,7 +431,7 @@ function teste(qtd, categoria) {
     
         page = getPage();
     
-        if(page == '' || page == 'index.html' || page == 'contato.html'){
+        if(page == '' || page == 'index.html' || page == 'cadastro.html'){
             return;
         }
     

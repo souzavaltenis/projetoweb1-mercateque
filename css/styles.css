@@ -656,7 +656,7 @@ form input::placeholder, textarea::placeholder {
         width: 90%;
     }
     .separacao {
-        width: 61%;
+        width: 80%;
         margin-left: 12vw;
     }
 
@@ -769,34 +769,25 @@ form input::placeholder, textarea::placeholder {
     }
 
     .separacao {
-        width: 61%;
         margin-left: 9vw;
     }
 
 }
 
-@media (max-width: 500px){
-    
-    .separacao {
-        margin-left: 12vw;
-    }
-}
-
-
 @media (max-width: 450px){
     .form form {
         background-color: transparent;
     }
-    .separacao {
-        margin-left: 0;
-    }
-
     #logo a {
         font-size: 1.3rem;
     }
 
     #bolinhas {
         margin-top: -5.4vw;
+    }
+
+    #main #container-products {
+        margin-left: 10vw;
     }
 
 }
