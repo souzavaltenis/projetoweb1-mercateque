@@ -164,7 +164,7 @@ function teste(qtd, categoria) {
     ==========================================================
     */
     
-    data_to_save = 'data_carrinho_mercateque'; //chave para recuperar e salvar dados
+    data_to_save = '_data_carrinho_mercateque_'; //chave para recuperar e salvar dados
     
     carrinho = []; //local onde será guardado os produtos do carrinho
     
