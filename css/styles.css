@@ -800,6 +800,7 @@ form input::placeholder, textarea::placeholder {
 
     .separacao {
         width: 90%;
+        margin-left: 0vw;
     }
 
     #main #container-products {
