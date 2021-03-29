@@ -16,6 +16,8 @@ Para instalar o Mercateque, siga estas etapas:
 2. Extraia o zip em uma pasta de sua preferência
 3. Abra a pasta extraida e abra o index.html no seu navegador de preferência
 
+Se preferir, este site está online no [Heroku](https://mercateque.herokuapp.com/).
+
 ## 🔋 Stacks Utilizadas
 
 1. HTML5
